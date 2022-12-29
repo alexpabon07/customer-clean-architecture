@@ -15,8 +15,9 @@ spring:
     mongodb:
       uri: "mongodb://localhost:27017/test"
       database: "test"
-  main:
-    allow-bean-definition-overriding: true
+  mongodb:
+    embedded:
+      version: 4.0.21
 management:
   endpoints:
     web:
