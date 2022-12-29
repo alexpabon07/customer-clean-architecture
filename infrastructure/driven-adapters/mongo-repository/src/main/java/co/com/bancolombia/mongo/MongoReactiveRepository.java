@@ -8,8 +8,7 @@ import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Mono;
 
 @Repository
-public interface MongoReactiveRepository
-        extends ReactiveMongoRepository<CustomerDTO, String> {
+public interface MongoReactiveRepository extends ReactiveMongoRepository<CustomerDTO, String> {
     @Query("{ 'clientDocument': ?0 }")
     Mono<Customer> findByClientDocument(String clientDocument);
 }
