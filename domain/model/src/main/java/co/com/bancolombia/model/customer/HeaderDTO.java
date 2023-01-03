@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Builder(toBuilder = true)
-public class Header {
+public class HeaderDTO {
     private String id;
     private String type;
 }

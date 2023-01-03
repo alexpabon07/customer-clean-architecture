@@ -5,17 +5,17 @@ import lombok.Data;
 
 @Data
 @Builder(toBuilder = true)
-public class DetailCustomer {
+public class DetailCustomerDTO {
     private String paymentFormat;
     private String paymentApplication;
-    private String affectsLotCreditPago;
+    private String affectsLotCrediPago;
     private String noBankOperator;
     private String commissionChargeScheme;
     private String commissionDebitForm;
-    private String commissionTime;
+    private String comissionTime;
     private String pensionsPayingEntity;
-    private String noveltyPayrollReport;
-    private String schemePayrollAccount;
+    private String noveltyPayrollAccount;
+    private String schemePaymentReport;
     private String generateCheque;
     private String cashPayments;
     private String formatModality;

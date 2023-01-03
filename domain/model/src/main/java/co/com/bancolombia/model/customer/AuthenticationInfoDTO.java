@@ -7,7 +7,7 @@ import java.util.List;
 
 @Data
 @Builder(toBuilder = true)
-public class AuthenticationInfo {
-    private String authenticationType;
-    private List<String> authenticationValue;
+public class AuthenticationInfoDTO {
+    private String authenticationtType;
+    private List<AuthenticationValueDTO> authenticationValue;
 }
