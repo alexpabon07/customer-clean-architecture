@@ -1,18 +1,21 @@
-package co.com.bancolombia.mongo.dto;
+package co.com.bancolombia.mongo.entity;
 
-import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.ToString;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Data
-@Builder(toBuilder = true)
 @Document(collection = "customer")
-public class CustomerDTO {
-    private HeaderDTO header;
+@Getter
+@ToString
+public class CustomerEntity {
+    @Id
+    private String id;
+    private HeaderEntity header;
     private String accountType;
     private String accountNumber;
     private String email;
-    private DetailCustomerDTO detailCustomer;
+    private DetailCustomerEntity detailCustomerInformation;
     private String clientDocumentType;
     private String clientDocument;
     private String businessDocumentType;
@@ -22,5 +25,5 @@ public class CustomerDTO {
     private String consumerId;
     private String userAgent;
     private String device;
-    private AuthenticationInfoDTO authenticationInfo;
+    private AuthenticationInfoEntity authenticationInfo;
 }

@@ -1,6 +1,7 @@
 package co.com.bancolombia.mongo.helper;
 
 import org.reactivecommons.utils.ObjectMapper;
+import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.data.repository.query.ReactiveQueryByExampleExecutor;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import reactor.core.publisher.Flux;
@@ -11,7 +12,7 @@ import java.util.function.Function;
 
 import static org.springframework.data.domain.Example.of;
 
-public abstract class AdapterOperations<E, D, I, R extends ReactiveCrudRepository<D, I> & ReactiveQueryByExampleExecutor<D>> {
+public abstract class AdapterOperations<E, D, I, R extends ReactiveMongoRepository<D, I>> {
 
     protected R repository;
     protected ObjectMapper mapper;
