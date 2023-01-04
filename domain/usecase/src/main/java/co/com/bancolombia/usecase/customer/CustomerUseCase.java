@@ -11,7 +11,7 @@ public class CustomerUseCase {
     final CustomerRepository customerRepository;
 
     public Mono<CustomerDTO> getOneCustomer(String clientDocument) {
-        return customerRepository.getOneCustomer("1989635462");
+        return customerRepository.getOneCustomer(clientDocument);
     }
 
     public Mono<CustomerDTO> saveCustomer(CustomerDTO customerDTO) {

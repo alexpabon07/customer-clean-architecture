@@ -24,7 +24,8 @@ public class Handler {
     }
 
     public Mono<ServerResponse> listenPOSTUseCase(ServerRequest serverRequest) {
-        customerUseCase.saveCustomer(serverRequest);
+        customerUseCase.saveCustomer(serverRequest.bodyToMono(CustomerDTO.class).block());
+
         return ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(serverRequest.attributes(), CustomerDTO.class);

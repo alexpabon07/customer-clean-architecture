@@ -33,8 +33,10 @@ public class MongoRepositoryAdapter extends AdapterOperations<CustomerDTO, Custo
     }
 
     @Override
-    public Mono<CustomerDTO> saveCustomer(CustomerEntity customerEntity) {
-        return repository.save(customerEntity);
+    public Mono<CustomerDTO> saveCustomer(CustomerDTO customerDTO) {
+        return Mono.just(toData(customerDTO))
+                .flatMap(customerEntity -> repository.save(customerEntity))
+                .flatMap(this::transformCustomer);
     }
 
     public Mono<CustomerDTO> transformCustomer(CustomerEntity customerEntity) {
