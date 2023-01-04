@@ -8,6 +8,6 @@ import reactor.core.publisher.Mono;
 
 @Repository
 public interface MongoReactiveRepository extends ReactiveMongoRepository<CustomerEntity, String> {
-    @Query("{clientDocument:'?0'}")
+    @Query("{ 'clientDocument': ?0 }")
     Mono<CustomerEntity> findByClientDocument(String clientDocument);
 }
