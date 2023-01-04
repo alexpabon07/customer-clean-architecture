@@ -16,19 +16,17 @@ public class Handler {
 
     public Mono<ServerResponse> listenGETUseCase(ServerRequest serverRequest) {
         return Mono.just(serverRequest.queryParam("clientDocument").get())
-                .flatMap(clientId -> customerUseCase
-                        .getOneCustomer(clientId))
+                .flatMap(clientId -> customerUseCase.getOneCustomer(clientId))
                 .flatMap(customerDTO -> ServerResponse.ok().bodyValue(customerDTO));
     }
 
     public Mono<ServerResponse> listenPOSTUseCase(ServerRequest serverRequest) {
-
-        return map(serverRequest)
+        return transformCustomerDTO(serverRequest)
                 .flatMap(customerDTO -> customerUseCase.saveCustomer(customerDTO))
                 .flatMap(customerDTO -> ServerResponse.ok().bodyValue(customerDTO));
     }
 
-    public Mono<CustomerDTO> map(ServerRequest request){
+    public Mono<CustomerDTO> transformCustomerDTO(ServerRequest request) {
         return Mono.just(CustomerDTO.builder()
                 .build());
     }

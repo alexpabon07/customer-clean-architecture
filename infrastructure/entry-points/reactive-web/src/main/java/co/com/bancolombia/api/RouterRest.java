@@ -19,9 +19,5 @@ public class RouterRest {
                         .and(route().POST("/customer", handler::listenPOSTUseCase).build())
 
         );
-
-
-        /*return route(GET("/api/customer/{clientDocument}"), handler::listenGETUseCase)
-                .andRoute(POST("/api/customer"), handler::listenPOSTUseCase);*/
     }
 }
