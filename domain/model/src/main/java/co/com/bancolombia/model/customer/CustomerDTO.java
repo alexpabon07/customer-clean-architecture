@@ -1,4 +1,5 @@
 package co.com.bancolombia.model.customer;
+import co.com.bancolombia.model.HeaderDTO;
 import lombok.*;
 
 @Data

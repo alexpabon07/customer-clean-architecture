@@ -1,4 +1,4 @@
-package co.com.bancolombia.model.customer;
+package co.com.bancolombia.model;
 
 import lombok.Builder;
 import lombok.Data;
