@@ -1,5 +1,6 @@
 package co.com.bancolombia.mongo;
 
+import co.com.bancolombia.model.HeaderDTO;
 import co.com.bancolombia.model.customer.*;
 import co.com.bancolombia.model.customer.gateways.CustomerRepository;
 import co.com.bancolombia.mongo.entity.*;
