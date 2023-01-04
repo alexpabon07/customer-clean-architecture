@@ -22,4 +22,11 @@ public class Handler {
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(customerFoundMono, CustomerDTO.class);
     }
+
+    public Mono<ServerResponse> listenPOSTUseCase(ServerRequest serverRequest) {
+        customerUseCase.saveCustomer(serverRequest);
+        return ServerResponse.ok()
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(serverRequest.attributes(), CustomerDTO.class);
+    }
 }

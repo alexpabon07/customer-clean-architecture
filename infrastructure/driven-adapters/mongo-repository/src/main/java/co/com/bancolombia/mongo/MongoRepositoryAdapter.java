@@ -32,6 +32,11 @@ public class MongoRepositoryAdapter extends AdapterOperations<CustomerDTO, Custo
                 .filter(isTab);
     }
 
+    @Override
+    public Mono<CustomerDTO> saveCustomer(CustomerEntity customerEntity) {
+        return repository.save(customerEntity);
+    }
+
     public Mono<CustomerDTO> transformCustomer(CustomerEntity customerEntity) {
         return Mono.just(CustomerDTO.builder()
                 .header(transformHeader(customerEntity.getHeader()))
